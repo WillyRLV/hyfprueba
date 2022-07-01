@@ -1,77 +1,610 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base target="_top">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- //script validacion mulitpe check minimo 1 -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
-    integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
-  </head>
-  <body>
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"
+        integrity="sha256-6XMVI0zB8cRzfZjqKcD01PBsAy3FlDASrlC8SxCpInY=" crossorigin="anonymous"></script>
+    <?!= include('js'); ?>
+    <?!= include('main') ?>
+</head>
+
+<body>
+
+    <div class="container mt-5 container-sm g-5 " id="second">
+
+        <div class="text-center m-auto">
+            <img class="rounded mx-auto d-block"
+                src="https://firebasestorage.googleapis.com/v0/b/hyfpics.appspot.com/o/pulso2.png?alt=media&token=549ed2f8-d3fc-4a67-89c0-b9547d9b1780"
+                width="300">
+        </div>
+        <p class="text-center">Queremos que te sientas en total libertad de expresarte,</br> <strong>tus respuestas son
+                totalmente confidenciales.</strong></p>
+        <!-- onsubmit="handleFormSubmit(this)" -->
+        <form class="m-auto  col-md-6" id="myform" method="POST" action="<?= pubUrl ?>">
+
+            <div class="mb-4 " style="display:none;">
+                <!-- INPUT DNI OCULTO -->
+
+                <label class="form-label"><b>DNI<font title="importante" color="red">*</font></b></label>
+                <input class="form-control" id="valido2" name="dniuser" readonly required>
+            </div>
+            <!--pregunta 1--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Recibes reconocimiento por el trabajo bien hecho por parte de tu jefe(a)
+                        de sección?
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="cent">
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p1" id="validationFormCheck1"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck1">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p1" id="validationFormCheck2"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck2">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p1" id="validationFormCheck3"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck3">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p1" id="validationFormCheck4"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck4">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p1" id="validationFormCheck5"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck5">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </br>
+
+
+            <!--2--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Tu jefe(a) de sección demuestra un interés sincero en ti como persona?
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p2" id="validationFormCheck6"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck6">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p2" id="validationFormCheck7"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck7">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p2" id="validationFormCheck8"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck8">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p2" id="validationFormCheck9"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck9">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p2" id="validationFormCheck10"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck10">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+
+            <!--3--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Te sientes satisfecho con el liderazgo de tu jefe(a) de sección?
+
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p3" id="validationFormCheck11"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck11">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p3" id="validationFormCheck12"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck12">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p3" id="validationFormCheck13"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck13">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p3" id="validationFormCheck14"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck14">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p3" id="validationFormCheck15"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck15">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+
+            <!--4--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Confías en tu jefe(a) de sección?
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p4" id="validationFormCheck16"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck16">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p4" id="validationFormCheck17"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck17">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p4" id="validationFormCheck18"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck18">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p4" id="validationFormCheck19"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck19">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p4" id="validationFormCheck20"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck20">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+
+            <!--5--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Tu jefe(a) de sección reconoce que puedes cometer errores involuntarios en
+                        el trabajo?
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p5" id="validationFormCheck21"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck21">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p5" id="validationFormCheck22"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck22">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p5" id="validationFormCheck23"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck23">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p5" id="validationFormCheck24"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck24">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p5" id="validationFormCheck25"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck25">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+
+
+            <!--6--->
+            <div class="mb-4 form-control">
+                <label class="form-label"><b>¿Tu jefe(a) de sección reconoce que puedes cometer errores involuntarios en
+                        el trabajo?
+                        <font color="red">*</font>
+                    </b></label>
+                </br>
+                <div class="form-check-inline div text-center ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p6" id="validationFormCheck26"
+                            value="1" required>
+                        <label class="form-check-label num " for="validationFormCheck26">
+                            1</br>
+                            <label style="font-size:12px">Totalmente en</br>desacuerdo</a>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p6" id="validationFormCheck27"
+                            value="2" required>
+                        <label class="form-check-label num " for="validationFormCheck27">
+                            <label>2</label></br>
+                            <label style="font-size:12px">En desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p6" id="validationFormCheck28"
+                            value="3" required>
+                        <label class="form-check-label num " for="validationFormCheck28">
+                            <label>3</label></br>
+                            <label style="font-size:12px">Ni de acuerdo </br>Ni en desacuerdo</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p6" id="validationFormCheck29"
+                            value="4" required>
+                        <label class="form-check-label num " for="validationFormCheck29">
+                            <label>4</label></br>
+                            <label style="font-size:12px">De acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-check-inline div text-center   ">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <input class=" d-flex form-check-input " type="radio" name="p6" id="validationFormCheck30"
+                            value="5" required>
+                        <label class="form-check-label num " for="validationFormCheck30">
+                            <label>5</label></br>
+                            <label style="font-size:12px">Totalmente de </br>acuerdo</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            </br>
+
+            <div class="mb-4 form-control">
+
+                <label for="customRange2" class="form-label"><b>¿Recomendarías a tus familiares y/o amigos trabajar en
+                        plazaVea/Vivanda? Del 1 (nada probable) al 10 (muy probable)
+                        <font color="red">*</font>
+                    </b></label>
+
+                <div class=" mt-4 justify-content-center">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio6" value="1" required>
+                        <label class="form-check-label" for="inlineRadio6">1</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio7" value="2" required>
+                        <label class="form-check-label" for="inlineRadio7">2</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio8" value="3" required>
+                        <label class="form-check-label" for="inlineRadio8">3</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio9" value="4" required>
+                        <label class="form-check-label" for="inlineRadio9">4</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio10" value="5" required>
+                        <label class="form-check-label" for="inlineRadio10">5</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio11" value="6" required>
+                        <label class="form-check-label" for="inlineRadio11">6</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio12" value="7" required>
+                        <label class="form-check-label" for="inlineRadio12">7</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio13" value="8" required>
+                        <label class="form-check-label" for="inlineRadio13">8</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio14" value="9" required>
+                        <label class="form-check-label" for="inlineRadio14">9</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="recom" id="inlineRadio15" value="10"
+                            required>
+                        <label class="form-check-label" for="inlineRadio15">10</label>
+                    </div>
+                </div>
+            </div>
+
+            </br>
+
+
+            <div class="col-12 mb-4 text-center">
+                <button id="sub" class="btn btn-primary " type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <footer class="py-2 my-5">
+        <div class="nav justify-content-center border-top pt-3 mt-3">
+            <!-- <h2 class="font">H<span class="span">&</span>F</h2> -->
+            <img src="https://firebasestorage.googleapis.com/v0/b/hyfpics.appspot.com/o/H%26F%20-%20CONSULTING.png?alt=media&token=9920ba1f-2391-44c7-b459-826a59450380"
+                width="150">
+        </div>
+        <!-- <h6 class=" font text-center mb-3">CONSULTING</h6> -->
+        <p class="text-center text-muted">© 2022 Todos los derechos reservados</p>
+    </footer>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+        .font {
+            font-family: 'Lato', sans-serif !important;
+        }
+
+        .span {
+            font-size: 16px;
+        }
+
+        .bl-foot {
+            font-size: 14px;
+
+        }
+    </style>
+</body>
+
+<style>
+    .cent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }             
     
+</style>
 
-    <form class="row g-3">
-        <!--input check FRENTES-->
+<script>
+    //jquery
+    $("input[name='check']").change(function () {
 
-      <div class="mb-4 check">
-        <label class="form-label" ><b>Escoge dos frentes que priorizarías para mejorar la empresa.<font color="red">*</font></b></label>
-        <div class="form-check">
-          <input class="form-check-input checki" type="checkbox" name="check" value="Capacitación" id="flexCheckDefault1" required>
-          <label class="form-check-label" for="flexCheckDefault01">
-    Capacitación
-  </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input checki" type="checkbox" name="check"  value="Crecimientos Internos (Ascensos)" id="flexCheckChecked02" required>
-          <label class="form-check-label" for="flexCheckChecked02">
-    Crecimientos Internos (Ascensos)
-  </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input checki" type="checkbox"  name="check" value="Reconocimiento" id="flexCheckChecked03" required>
-          <label class="form-check-label" for="flexCheckChecked03">
-   Reconocimiento
-  </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input checki" type="checkbox" name="check"  value="Equilibrio Vida/trabajo" id="flexCheckChecked04" required>
-          <label class="form-check-label" for="flexCheckChecked04">
-    Equilibrio Vida/trabajo
-  </label>
-        </div>
-      </div>
-      <div class="col-12 mb-4 text-center">
-        <button id="sub" class="btn btn-primary " type="submit">Enviar</button>
-      </div>
+        $.each($("input[name='check']"), function () {
+            this.setCustomValidity('');
+        });
+        var checked = $("input[name='check']:checked").length;
+        if (checked == 1) {
+            $("input[name='check']")[0].setCustomValidity('Porfavor seleccione dos opciones.');
+        }
+    });
 
-      </form>
+    $("#myform").submit(function () {
 
-      <script>
+        var checked = $("input[name='check']:checked").length;
+        if (checked == 0) {
+            $("input[name='check']")[0].setCustomValidity('Porfavor seleccione dos opciones.');
+            return false;
 
-$(function(){
+        }
+    });
 
-var requiredCheckboxes = $(':checkbox[required]');
 
-requiredCheckboxes.change(function(){
-    console.log(requiredCheckboxes.is(':checked').length)
 
-    // if(requiredCheckboxes.is(':checked')) {
-    //     requiredCheckboxes.removeAttr('required');
-    // }
+    //segungo checklisk
+    $("input[name='check1']").change(function () {
+        $.each($("input[name='check1']"), function () {
+            this.setCustomValidity('');
+        });
+        var checked = $("input[name='check1']:checked").length;
+        if (checked == 0) {
+            $("input[name='check1']")[0].setCustomValidity('Please select at least one checkbox.');
+        }
+    });
 
-    // else {
-    //     requiredCheckboxes.attr('required', 'required');
-    // }
-});
+    $("#myform").submit(function () {
+        var checked = $("input[name='check1']:checked").length;
+        if (checked == 0) {
+            $("input[name='check1']")[0].setCustomValidity('Please select at least one checkbox.');
 
-});
-      
+            return false;
+        }
+    });
 
-      </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  </body>
+</script>
+<script>
+    //   (() => {
+    //   'use strict'
+
+    //   // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    //   const forms = document.querySelectorAll('.needs-validation')
+
+    //   // Loop over them and prevent submission
+    //   Array.from(forms).forEach(form => {
+    //     form.addEventListener('submit', event => {
+    //       if (!form.checkValidity()) {
+    //         event.preventDefault()
+    //         event.stopPropagation()
+    //       }
+
+    //       form.classList.add('was-validated')
+    //     }, false)
+    //   })
+    // })();
+
+    //limitcheck
+    var checks = document.querySelectorAll(".checki");
+    var max = 2;
+    for (var i = 0; i < checks.length; i++)
+        checks[i].onclick = selectiveCheck;
+    function selectiveCheck(event) {
+        var checkedChecks = document.querySelectorAll(".checki:checked");
+        if (checkedChecks.length > max)
+            return false;
+    }
+
+
+    //limitcheck2
+    var checks2 = document.querySelectorAll(".checki1");
+    var max1 = 3;
+    for (var i = 0; i < checks2.length; i++)
+        checks2[i].onclick = selectiveCheck2;
+    function selectiveCheck2(event) {
+        var checkedChecks2 = document.querySelectorAll(".checki1:checked");
+        if (checkedChecks2.length > max1)
+            return false;
+    }
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+
 </html>
